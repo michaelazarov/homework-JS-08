@@ -227,7 +227,15 @@ function User(name) {
 // }()
 
 //Вариант2
-User.prototype.counter = (function() {
+// User.prototype.counter = (function() {
+//     var i = 0
+//     return function() {
+//         return this.id === undefined ? i++ : this.id
+//     }
+// })()
+
+//Вариант3
+User.prototype.counter = (() => {
     var i = 0
     return function() {
         return this.id === undefined ? i++ : this.id
